@@ -20,8 +20,6 @@ class Article extends Model
         'description',
     ];
 
-    const CREATED_AT = 'publication_date';
-
     function author()
     {
         return $this->belongsTo(User::class);
