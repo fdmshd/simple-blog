@@ -20,8 +20,9 @@ class Author extends Model
         'slug',
     ];
 
-    function articles()
+    public function articles(): HasMany
     {
         return $this->hasMany(Article::class);
     }
+
 }
