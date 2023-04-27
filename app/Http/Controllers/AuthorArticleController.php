@@ -10,7 +10,6 @@ use App\Models\Article;
 
 class AuthorArticleController extends Controller
 {
-    private const PER_PAGE = 10;
     public function index($authorSlug)
     {
         $author = Author::where('slug', $authorSlug)->firstOrFail();

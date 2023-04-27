@@ -9,10 +9,9 @@ use App\Models\Author;
 
 class AuthorController extends Controller
 {
-    private const PER_PAGE = 10;
     public function index(): JsonResponse
     {
-        $authors = Author::paginate(self::PER_PAGE);
+        $authors = Author::paginate(Author::PER_PAGE);
         $collection = new AuthorCollection($authors);
 
         return response()
