@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class AuthorArticleCollection extends ResourceCollection
+class AuthorCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -14,6 +14,10 @@ class AuthorArticleCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return ['data'=>$this->collection];
+        return [
+            'authors' => $this->collection,
+            'current_page' => $this->currentPage(),
+            'last_page' => $this->lastPage()
+        ];
     }
 }

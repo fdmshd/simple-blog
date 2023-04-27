@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ArticleCollection;
 use App\Http\Resources\ArticleResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -13,13 +14,11 @@ class ArticleController extends Controller
     public function index(): JsonResponse
     {
         $articles = Article::paginate(Article::PER_PAGE);
-        $collection = ArticleResource::collection($articles);
+        $collection = new ArticleCollection($articles);
 
         return response()
             ->json([
-                'data' => $collection,
-                'current_page' => $collection->currentPage(),
-                'last_page' => $collection->lastPage()
+                'data' => $collection
             ]);
     }
 
