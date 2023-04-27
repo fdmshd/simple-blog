@@ -1,0 +1,800 @@
+{
+	"info": {
+		"_postman_id": "eeaa82ac-51e8-47e8-a7da-57c496b4f526",
+		"name": "simple-blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12400873"
+	},
+	"item": [
+		{
+			"name": "Получить список авторов",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/authors?page=55",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"authors"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "55",
+							"description": "Установить текущую страницу (для пагинации)"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Получить список авторов",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/authors?page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"authors"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Установить текущую страницу (для пагинации)"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 15:58:51 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 15:58:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.5"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"authors\": [\n            {\n                \"name\": \"Dwight Kuvalis MD\",\n                \"slug\": \"dwight-kuvalis-md\"\n            },\n            {\n                \"name\": \"Shawn Miller\",\n                \"slug\": \"shawn-miller\"\n            },\n            {\n                \"name\": \"Lon Walter\",\n                \"slug\": \"lon-walter\"\n            },\n            {\n                \"name\": \"Karolann Raynor DDS\",\n                \"slug\": \"karolann-raynor-dds\"\n            },\n            {\n                \"name\": \"Meta Heaney\",\n                \"slug\": \"meta-heaney\"\n            },\n            {\n                \"name\": \"Angelita Rohan MD\",\n                \"slug\": \"angelita-rohan-md\"\n            },\n            {\n                \"name\": \"Bettye Paucek Jr.\",\n                \"slug\": \"bettye-paucek-jr\"\n            },\n            {\n                \"name\": \"Savion Ortiz\",\n                \"slug\": \"savion-ortiz\"\n            },\n            {\n                \"name\": \"Sammy Ondricka\",\n                \"slug\": \"sammy-ondricka\"\n            },\n            {\n                \"name\": \"Mr. Sonny Christiansen Sr.\",\n                \"slug\": \"mr-sonny-christiansen-sr\"\n            }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 1\n    }\n}"
+				},
+				{
+					"name": "page > last_page",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/authors?page=55",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"authors"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "55",
+									"description": "Установить текущую страницу (для пагинации)"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 15:59:03 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 15:59:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.5"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"authors\": [],\n        \"current_page\": 55,\n        \"last_page\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Получить список новостей",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/articles?page=100",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "100",
+							"description": "Установить текущую страницу (для пагинации)"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Получить список новостей",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/articles?page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Установить текущую страницу (для пагинации)"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:00:49 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:00:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.5"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"articles\": [\n            {\n                \"name\": \"Voluptatibus et in eaque culpa eos eligendi.\",\n                \"slug\": \"voluptatibus-et-in-eaque-culpa-eos-eligendi\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Molestiae rem qui adipisci cumque optio facere quia.\",\n                \"slug\": \"molestiae-rem-qui-adipisci-cumque-optio-facere-quia\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Asperiores qui eaque consequuntur quaerat quidem voluptatem.\",\n                \"slug\": \"asperiores-qui-eaque-consequuntur-quaerat-quidem-voluptatem\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Quo voluptas enim et est provident cupiditate.\",\n                \"slug\": \"quo-voluptas-enim-et-est-provident-cupiditate\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Beatae reiciendis sint rem eaque.\",\n                \"slug\": \"beatae-reiciendis-sint-rem-eaque\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Optio quia nostrum consequuntur autem reprehenderit id aut consequatur.\",\n                \"slug\": \"optio-quia-nostrum-consequuntur-autem-reprehenderit-id-aut-consequatur\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Voluptatem et incidunt ipsum velit ipsam error delectus.\",\n                \"slug\": \"voluptatem-et-incidunt-ipsum-velit-ipsam-error-delectus\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Id doloremque voluptas assumenda nemo iste sed.\",\n                \"slug\": \"id-doloremque-voluptas-assumenda-nemo-iste-sed\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Iure autem et in.\",\n                \"slug\": \"iure-autem-et-in\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Voluptas culpa tempora eveniet quia.\",\n                \"slug\": \"voluptas-culpa-tempora-eveniet-quia\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 30\n    }\n}"
+				},
+				{
+					"name": "page > last_page",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/articles?page=100",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "100",
+									"description": "Установить текущую страницу (для пагинации)"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:02:10 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:02:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.5"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"articles\": [],\n        \"current_page\": 100,\n        \"last_page\": 30\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Показать новость подробно",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/articles/{{article_slug}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"{{article_slug}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Показать новость подробно",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/articles/{{article_slug}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"{{article_slug}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 15:55:27 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 15:55:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.5"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"name\": \"Provident eius ut non nihil ad.\",\n        \"slug\": \"provident-eius-ut-non-nihil-ad\",\n        \"description\": \"Deleniti esse nobis numquam deserunt aliquid. Laboriosam aperiam earum doloremque placeat occaecati sint.\",\n        \"author\": \"Shawn Miller\",\n        \"publication_date\": \"27.04.2023 04:08\"\n    }\n}"
+				},
+				{
+					"name": "Неправильный slug",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/articles/exactly_the_wrong_slug",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"exactly_the_wrong_slug"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:43:24 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:43:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.5"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"the request resourse could not be found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Показать автора со статьями",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/authors/{{author_slug}}/articles?page=5",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"authors",
+						"{{author_slug}}",
+						"articles"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Показать автора со статьями",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/authors/{{author_slug}}/articles?page=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								"{{author_slug}}",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"description": "Установить текущую страницу (для пагинации)"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:44:15 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:44:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.5"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"author\": \"Dwight Kuvalis MD\",\n        \"articles\": [\n            {\n                \"name\": \"Porro et est et est.\",\n                \"slug\": \"porro-et-est-et-est\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"A est quas repudiandae eum.\",\n                \"slug\": \"a-est-quas-repudiandae-eum\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Dolorem sit beatae est qui exercitationem expedita.\",\n                \"slug\": \"dolorem-sit-beatae-est-qui-exercitationem-expedita\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Debitis velit deserunt error inventore ullam.\",\n                \"slug\": \"debitis-velit-deserunt-error-inventore-ullam\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Et eum non aut vel.\",\n                \"slug\": \"et-eum-non-aut-vel\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Aperiam quis pariatur voluptate omnis.\",\n                \"slug\": \"aperiam-quis-pariatur-voluptate-omnis\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Alias nobis sint provident nihil sunt ipsam animi ipsam.\",\n                \"slug\": \"alias-nobis-sint-provident-nihil-sunt-ipsam-animi-ipsam\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Nihil nemo facilis vel voluptatem qui nisi.\",\n                \"slug\": \"nihil-nemo-facilis-vel-voluptatem-qui-nisi\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Id sequi et neque consectetur recusandae.\",\n                \"slug\": \"id-sequi-et-neque-consectetur-recusandae\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            },\n            {\n                \"name\": \"Eius similique delectus non nobis.\",\n                \"slug\": \"eius-similique-delectus-non-nobis\",\n                \"author\": \"Dwight Kuvalis MD\",\n                \"publication_date\": \"27.04.2023 04:08\"\n            }\n        ],\n        \"current_page\": 2,\n        \"last_page\": 3\n    }\n}"
+				},
+				{
+					"name": "Неправильный slug",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/authors/exactly_the_wrong_slug/articles?page=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								"exactly_the_wrong_slug",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"description": "Установить текущую страницу (для пагинации)"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:44:45 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:44:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.5"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"the request resourse could not be found\"\n}"
+				},
+				{
+					"name": "page > last_page",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/authors/{{author_slug}}/articles?page=5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								"{{author_slug}}",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:50:01 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Apr 2023 16:50:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.5"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"author\": \"Dwight Kuvalis MD\",\n        \"articles\": [],\n        \"current_page\": 5,\n        \"last_page\": 3\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "article_slug",
+			"value": "provident-eius-ut-non-nihil-ad"
+		},
+		{
+			"key": "author_slug",
+			"value": "dwight-kuvalis-md"
+		}
+	]
+}
