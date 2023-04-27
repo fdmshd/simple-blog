@@ -19,7 +19,7 @@ class ArticleResource extends JsonResource
             'slug' => $this->slug,
             'description' => $this->description,
             'author' => $this->author->name,
-            'publication_date' => $this->created_at->format('d.m.Y H:i')
+            'publication_date' => $this->created_at->format('d.m.Y H:i'),
         ];
     }
 }

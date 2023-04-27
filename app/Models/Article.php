@@ -11,7 +11,7 @@ class Article extends Model
     use HasFactory;
 
     const PER_PAGE = 10;
-    
+
     /**
      * The attributes that are mass assignable.
      *

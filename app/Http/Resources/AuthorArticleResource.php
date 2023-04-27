@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Models\Article;
 
 class AuthorArticleResource extends JsonResource
 {

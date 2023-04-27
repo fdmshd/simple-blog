@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\AuthorCollection;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use App\Models\Author;
+use Illuminate\Http\JsonResponse;
 
 class AuthorController extends Controller
 {
@@ -19,5 +18,4 @@ class AuthorController extends Controller
                 'data' => $collection,
             ]);
     }
-
 }

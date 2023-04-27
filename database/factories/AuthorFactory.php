@@ -18,9 +18,10 @@ class AuthorFactory extends Factory
     public function definition(): array
     {
         $name = $this->faker->name();
+
         return [
             'name' => $name,
-            'slug' => Str::slug($name)
+            'slug' => Str::slug($name),
         ];
     }
 }

@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\ArticleCollection;
 use App\Http\Resources\ArticleResource;
-use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
 use App\Models\Article;
-
+use Illuminate\Http\JsonResponse;
 
 class ArticleController extends Controller
 {
@@ -18,7 +16,7 @@ class ArticleController extends Controller
 
         return response()
             ->json([
-                'data' => $collection
+                'data' => $collection,
             ]);
     }
 
@@ -26,6 +24,7 @@ class ArticleController extends Controller
     {
         $article = Article::where('slug', $slug)->firstOrFail();
         $articleResourse = new ArticleResource($article);
+
         return response()
             ->json([
                 'data' => $articleResourse,

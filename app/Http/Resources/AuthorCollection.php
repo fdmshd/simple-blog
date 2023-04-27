@@ -17,7 +17,7 @@ class AuthorCollection extends ResourceCollection
         return [
             'authors' => $this->collection,
             'current_page' => $this->currentPage(),
-            'last_page' => $this->lastPage()
+            'last_page' => $this->lastPage(),
         ];
     }
 }

@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\AuthorArticleCollection;
 use App\Http\Resources\AuthorArticleResource;
-use Illuminate\Http\Request;
 use App\Models\Author;
-use App\Models\Article;
 
 class AuthorArticleController extends Controller
 {

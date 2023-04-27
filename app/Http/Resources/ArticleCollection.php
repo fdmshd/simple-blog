@@ -17,7 +17,7 @@ class ArticleCollection extends ResourceCollection
         return [
             'articles' => $this->collection,
             'current_page' => $this->currentPage(),
-            'last_page' => $this->lastPage()
+            'last_page' => $this->lastPage(),
         ];
     }
 }
