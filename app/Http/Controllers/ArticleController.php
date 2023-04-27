@@ -10,10 +10,9 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
-    private const PER_PAGE = 10;
     public function index(): JsonResponse
     {
-        $articles = Article::paginate(self::PER_PAGE);
+        $articles = Article::paginate(Article::PER_PAGE);
         $collection = ArticleResource::collection($articles);
 
         return response()

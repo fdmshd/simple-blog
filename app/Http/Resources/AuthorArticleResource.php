@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\Article;
 
 class AuthorArticleResource extends JsonResource
 {
@@ -14,9 +15,16 @@ class AuthorArticleResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $articleCollection = ArticleResource::collection(
+            Article::where('author_id', $this->id)
+                ->paginate(Article::PER_PAGE)
+        );
+
         return [
             'author' => $this->name,
-            'articles' => ArticleResource::collection($this->articles)
+            'articles' => $articleCollection,
+            'current_page' => $articleCollection->currentPage(),
+            'last_page' => $articleCollection->lastPage(),
         ];
     }
 }
