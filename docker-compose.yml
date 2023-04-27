@@ -1,7 +1,6 @@
 version: '3'
 services:
-    blog_laravel:
-        container_name: blog_laravel
+    laravel.test:
         build:
             context: ./vendor/laravel/sail/runtimes/8.2
             dockerfile: Dockerfile
@@ -23,9 +22,8 @@ services:
         networks:
             - sail
         depends_on:
-            - blog_mysql
-    blog_mysql:
-        container_name: blog_mysql
+            - mysql
+    mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
