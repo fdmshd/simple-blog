@@ -19,11 +19,11 @@ class ArticleFactory extends Factory
      */
     public function definition(): array
     {
-        $name = $this->faker->realText(99);
+        $title = $this->faker->sentence();
         return [
-            'name' => $name,
-            'slug' => Str::slug($name),
-            'description' => $this->faker->realText()
+            'name' => $title,
+            'slug' => Str::slug($title),
+            'description' => $this->faker->text(),
         ];
     }
 }
