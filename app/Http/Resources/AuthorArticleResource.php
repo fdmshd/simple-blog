@@ -15,7 +15,7 @@ class AuthorArticleResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $articleCollection = ArticleResource::collection(
+        $articleCollection = ShortArticleResource::collection(
             Article::where('author_id', $this->id)
                 ->paginate(Article::PER_PAGE)
         );

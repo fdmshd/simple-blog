@@ -15,9 +15,11 @@ class AuthorCollection extends ResourceCollection
     public function toArray(Request $request): array
     {
         return [
-            'authors' => $this->collection,
-            'current_page' => $this->currentPage(),
-            'last_page' => $this->lastPage(),
+            'data' => [
+                'authors' => $this->collection,
+                'current_page' => $this->currentPage(),
+                'last_page' => $this->lastPage(),
+            ],
         ];
     }
 }

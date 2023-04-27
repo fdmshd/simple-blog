@@ -2,32 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\ArticleCollection;
 use App\Http\Resources\ArticleResource;
+use App\Http\Resources\ShortArticleCollection;
 use App\Models\Article;
-use Illuminate\Http\JsonResponse;
 
 class ArticleController extends Controller
 {
-    public function index(): JsonResponse
+    public function index()
     {
         $articles = Article::paginate(Article::PER_PAGE);
-        $collection = new ArticleCollection($articles);
+        $collection = new ShortArticleCollection($articles);
 
-        return response()
-            ->json([
-                'data' => $collection,
-            ]);
+        return response()->json($collection);
     }
 
-    public function show($slug): JsonResponse
+    public function show($slug)
     {
         $article = Article::where('slug', $slug)->firstOrFail();
         $articleResourse = new ArticleResource($article);
 
-        return response()
-            ->json([
-                'data' => $articleResourse,
-            ]);
+        return $articleResourse;
     }
 }

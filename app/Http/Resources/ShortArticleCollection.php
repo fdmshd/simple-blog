@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class ArticleCollection extends ResourceCollection
+class ShortArticleCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -15,9 +15,11 @@ class ArticleCollection extends ResourceCollection
     public function toArray(Request $request): array
     {
         return [
-            'articles' => $this->collection,
-            'current_page' => $this->currentPage(),
-            'last_page' => $this->lastPage(),
+            'data' => [
+                'articles' => $this->collection,
+                'current_page' => $this->currentPage(),
+                'last_page' => $this->lastPage(),
+            ],
         ];
     }
 }
