@@ -34,7 +34,7 @@ composer install
 cp .env.example .env
 ```
 
-Установите ключ шифрования командой
+Установите ключ шифрования командой:
 ```bash
 php artisan key:generate
 ```
@@ -44,12 +44,12 @@ php artisan key:generate
 ./vendor/bin/sail up -d
 ```
 
-Выполните миграции
+Выполните миграции:
 ```bash
 ./vendor/bin/sail artisan migrate
 ```
 
-Заполните базу
+Заполните базу:
 ```bash
 ./vendor/bin/sail artisan db:seed
 ```
